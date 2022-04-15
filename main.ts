@@ -63,10 +63,6 @@ forever(function () {
         } else {
         	
         }
-    }
-})
-forever(function () {
-    if (!(spriteChanging)) {
         pause(1500)
         Cow.setImage(assets.image`Smily Cow`)
     }
