@@ -14,8 +14,7 @@ controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.
         Cow.setImage(assets.image`Oh Cow`)
     }
     pops += 1
-    setTimeout(()=>{Cow.setImage(assets.image`Smily Cow`)},1000)
-spriteChanging = 0
+    spriteChanging = 0
 })
 controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.B), function () {
     blockSettings.writeString("1", "0")
@@ -64,5 +63,11 @@ forever(function () {
         } else {
         	
         }
+    }
+})
+forever(function () {
+    if (!(spriteChanging)) {
+        pause(1500)
+        Cow.setImage(assets.image`Smily Cow`)
     }
 })
