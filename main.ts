@@ -14,14 +14,15 @@ controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.
         Cow.setImage(assets.image`Oh Cow`)
     }
     pops += 1
-    Cow.setImage(assets.image`Smily Cow`)
-    spriteChanging = 0
+    setTimeout(()=>{Cow.setImage(assets.image`Smily Cow`)},1000)
+spriteChanging = 0
 })
 controller.combos.attachCombo(controller.combos.idToString(controller.combos.ID.B), function () {
     blockSettings.writeString("1", "0")
     blockSettings.writeString("2", "0")
     blockSettings.writeString("3", "0")
 })
+let pops = 0
 let random = 0
 let spriteChanging = 0
 let Cow: Sprite = null
@@ -30,7 +31,6 @@ if (blockSettings.readString("1").isEmpty()) {
     blockSettings.writeString("2", "0")
     blockSettings.writeString("3", "0")
 }
-let pops = 0
 scene.setBackgroundImage(assets.image`White Background`)
 Cow = sprites.create(assets.image`Smily Cow`, SpriteKind.Player)
 Cow.setScale(4.5, ScaleAnchor.Middle)
